@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-4.6.dtd">
 <!-- eric4 project file for project TransformTrainer -->
-<!-- Saved: 2012-11-20, 22:26:04 -->
+<!-- Saved: 2012-11-21, 00:09:34 -->
 <!-- Copyright (C) 2012 Alex Makarov, makarov.san@gmail.com -->
 <Project version="4.6">
   <Language>en</Language>
@@ -12,11 +12,11 @@
   <Author>Alex Makarov</Author>
   <Email>makarov.san@gmail.com</Email>
   <Sources>
-    <Source>TransformTraning.ui.py</Source>
     <Source>__init__.py</Source>
+    <Source>TransformTrainer.py</Source>
+    <Source>TransformTrainer.ui.py</Source>
   </Sources>
   <Forms>
-    <Form>TransformTraning.ui</Form>
   </Forms>
   <Translations>
   </Translations>
