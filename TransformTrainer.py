@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # coding=utf-8
 #from testapp_ui import TestAppUI
-from TransformTraining import Ui_Dialog 
+from TransformTrainer import Ui_Dialog 
 from qt import *
 import sys
 
@@ -29,7 +29,7 @@ class Ui_Dialog_App(Ui_Dialog):
         self.deletebutton.setEnabled(False)
     def _connectSlots(self):
         # Устанавливаем обработчики сингналов на кнопки
-        #self.connect(self.addbutton,SIGNAL("clicked()"),self._slotAddClicked)
+        self.connect(self.addbutton,SIGNAL("clicked()"),self._slotAddClicked)
         #self.connect(self.lineedit,SIGNAL("returnPressed()"),self._slotAddClicked)
         #self.connect(self.deletebutton,SIGNAL("clicked()"),self._slotDeleteClicked)
     def _slotAddClicked(self):
