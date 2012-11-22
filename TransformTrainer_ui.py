@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\_prog\TransformTrainer\TransformTraning.ui'
+# Form implementation generated from reading ui file 'TransformTrainer.ui'
 #
-# Created: Tue Nov 20 19:00:48 2012
+# Created: Thu Nov 22 17:39:52 2012
 #      by: PyQt4 UI code generator 4.9.5
 #
 # WARNING! All changes made in this file will be lost!
@@ -80,6 +80,7 @@ class Ui_Dialog(object):
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.pbStart = QtGui.QPushButton(Dialog)
         self.pbStart.setMinimumSize(QtCore.QSize(0, 25))
+        self.pbStart.setCheckable(True)
         self.pbStart.setObjectName(_fromUtf8("pbStart"))
         self.verticalLayout.addWidget(self.pbStart)
 
