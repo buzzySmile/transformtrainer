@@ -1,22 +1,26 @@
 #!/usr/bin/python
 # coding=utf-8
 #import sys
-from PyQt4 import QtCore
+from PyQt4.QtCore import QObject, QTimer, SIGNAL
 
-class Metronome(QtCore.QObject):
+
+class Metronome(QObject):
     ticks = ["1", "2", "3", "4"]
     tick_index = 0
+    
     def __init__(self, bpm = 75):
+        QObject.__init__(self)
         ms_per_beat = 60000/bpm
-        self.timer = QtCore.QTimer()
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.generate_tick)
         self.timer.start(ms_per_beat)
-        self.connect(self.timer, QtCore.SIGNAL("timeout()"), self.generateTick())
+        #self.connect(self.timer, SIGNAL("timeout()"), self, SLOT("generateTick()"))
                                
-    def generateTick(self):
+    def generate_tick(self):
         self.tick_index += 1
         if(self.tick_index > 3):
             self.tick_index = 0
-        self.emit(QtCore.SIGNAL("tick(str)"), self.ticks[self.tick_index])
+        self.emit(SIGNAL("tick(str)"), self.ticks[self.tick_index])
     
-    def changeBpm(self, new_bpm):
-        self.timer.setInterval(new_bpm)
+    def change_bpm(self, new_bpm):
+        self.timer.setInterval(new_bpm)        
