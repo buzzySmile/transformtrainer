@@ -17,7 +17,14 @@ class MyForm(QtGui.QDialog):
         self.metr = Metronome(self.ui.sbBPM.value())
         self.connect(self.metr, QtCore.SIGNAL("tick(QString)"), self.ui.lTick.setText)
         self.connect(self.ui.sbBPM, QtCore.SIGNAL("valueChanged(int)"), self.metr.changeBpm)
-        self.connect(self.metr, QtCore.SIGNAL("bar()"), self.change_key)
+        self.connect(self.ui.pbStart, QtCore.SIGNAL("toggled(bool)"), self.mode)
+        
+    def mode(self, state):
+        if state == True:
+            self.connect(self.metr, QtCore.SIGNAL("bar()"), self.change_key)
+        else:
+            self.disconnect(self.metr, QtCore.SIGNAL("bar()"), self.change_key)    
+            
     
     def change_key(self):
         self.ui.lKey.setText(random.choice(key))

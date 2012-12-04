@@ -5,16 +5,17 @@ from PyQt4.QtCore import QObject, QTimer, SIGNAL, QString
 from Tkinter import *
 from tkSnack import *
 
-
 class Metronome(QObject):
     ticks = ["1", "2", "3", "4"]
     tick_index = 0
     
     def __init__(self, bpm=75):
         QObject.__init__(self)
+        """AudioControllerSingleton().playLatency(100)"""
         self.root = Tkinter.Tk()
         initializeSnack(self.root)
-        self.s = Sound(load='stickhit.wav') 
+        self.s = Sound() 
+        self.filt = Filter('generator', 440.0, 30000, 0.0, 'sine', 8000)
         #self.s.read('stickhit.wav')         
         ms_per_beat = 60000/bpm
         self.timer = QTimer()   
@@ -28,8 +29,10 @@ class Metronome(QObject):
         if(self.tick_index > 3):
             self.tick_index = 0
             self.emit(SIGNAL("bar()"))
+            self.playbeep(261.6)
         t_str = QString(self.ticks[self.tick_index])    
         self.emit(SIGNAL("tick(QString)"), t_str)
+        self.playbeep(523.3)
     
     def _setBpm(self, new_bpm):
         ms_per_beat = 60000/new_bpm
@@ -38,5 +41,10 @@ class Metronome(QObject):
     def changeBpm(self, new_bpm):
         ms_per_beat = 60000/new_bpm
         self.timer.setInterval(ms_per_beat)
+        
+    def playbeep(self, freq):
+        self.s.stop()
+        self.filt.configure(freq)
+        self.s.play(filter=self.filt)
         
     bpm = property(fset=_setBpm)
