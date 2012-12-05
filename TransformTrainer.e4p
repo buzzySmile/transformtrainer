@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-4.6.dtd">
 <!-- eric4 project file for project TransformTrainer -->
-<!-- Saved: 2012-11-21, 00:15:29 -->
+<!-- Saved: 2012-12-06, 00:47:04 -->
 <!-- Copyright (C) 2012 Alex Makarov, makarov.san@gmail.com -->
 <Project version="4.6">
   <Language>en</Language>
@@ -12,12 +12,12 @@
   <Author>Alex Makarov</Author>
   <Email>makarov.san@gmail.com</Email>
   <Sources>
-    <Source>__init__.py</Source>
-    <Source>TransformTrainer.py</Source>
-    <Source>TransformTrainer.ui.py</Source>
+    <Source>src/TransformTrainer.py</Source>
+    <Source>src/__init__.py</Source>
+    <Source>src/Metronome.py</Source>
   </Sources>
   <Forms>
-    <Form>TransformTrainer.ui</Form>
+    <Form>src/TransformTrainer.ui</Form>
   </Forms>
   <Translations>
   </Translations>
@@ -26,7 +26,7 @@
   <Interfaces>
   </Interfaces>
   <Others>
-    <Other>key.png</Other>
+    <Other>res</Other>
   </Others>
   <Vcs>
     <VcsType>Subversion</VcsType>
