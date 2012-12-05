@@ -28,8 +28,7 @@ class MyForm(QtGui.QDialog):
     
     def change_key(self):
         self.ui.lKey.setText(random.choice(key))
-        self.ui.lTransform.setText(random.choice(transform))
-        
+        self.ui.lTransform.setText(random.choice(transform))   
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
