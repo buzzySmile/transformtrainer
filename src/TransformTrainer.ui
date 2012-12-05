@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>key.png</normaloff>key.png</iconset>
+    <normaloff>../res/key.png</normaloff>../res/key.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
