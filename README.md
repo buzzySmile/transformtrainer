@@ -1,12 +1,12 @@
-h3. Transform Trainer
+# Transform Trainer
 ================
-h3. Summary
+# Summary
 
 Program for train playing chord and transforms of them. 
 
-h3. Using 
+# Using 
 - PyQt
 - TkInter (python-tk)
-- tk-snack:http://www.speech.kth.se/snack for click sound genereation
+- tk-snack(http://www.speech.kth.se/snack) for click sound genereation
 
 
